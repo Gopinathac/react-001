@@ -12,7 +12,7 @@ const Card = (props) => {
                         <div className="card card-chart">
                             <div className={card.titleClass} >
                                 <h4 className="card-title" id="tit-hand">
-                                    <a href="/modules">{card.heading}</a>
+                                    <a href="/module_deatils">{card.heading} NNNNN</a>
                                 </h4>
                                 <p className="card-category"></p>
                             </div>
