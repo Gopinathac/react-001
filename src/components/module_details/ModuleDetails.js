@@ -3,31 +3,54 @@ import Card from './Card';
 import { connect } from 'react-redux';
 import { getCards } from '../../store/actions/dashboardActions';
 import { Redirect } from 'react-router-dom';
+import SHEET1 from '../../images/sheet1.xlsx';
 
 class Modules extends Component {
     
     constructor(props) {
         super(props);
-        this.state = {cards: [
+        
+        console.log('CDCDCDCD', props);
+        var attachment = 'http://localhost:3000/sheet1.xlsx';
+        var attachmentObj = {};
+        if (sessionStorage.getItem('uploadedFile')) {
+            attachmentObj = JSON.parse(sessionStorage.getItem('uploadedFile'));
+        } 
+
+        var cards = [
             {
                 heading: "Link 1",
                 id: 1,
                 subheading: "Test Link 1",
                 titleClass: "card-header-success",
+                attachment: attachment
             },
             {
                 heading: "Link 2",
                 id: 2,
                 subheading: "Test Link 2",
                 titleClass: "card-header-danger",
+                attachment: attachment
             },
             {
                 heading: "Link 3",
                 id: 3,
                 subheading: "Test Link 3",
                 titleClass: "card-header-success",
+                attachment: attachment
             }
-        ]};
+        ];
+
+        for (let i = 0; i < cards.length; i++) {
+            var c = cards[i];
+            if (attachmentObj.id == c.id) {
+                c.attachment = attachmentObj.fname;
+            }
+            
+        }
+        this.state = {cards: cards};
+
+        
     }
     componentDidMount() {
        
@@ -51,6 +74,7 @@ class Modules extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log('EEEEEEEE', state);
     return {
         cards : state.dashboard.cards,
         token: state.auth.token
