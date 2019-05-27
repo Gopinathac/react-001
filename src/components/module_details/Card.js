@@ -111,10 +111,12 @@ export class Card extends Component {
                                         <a href={card.attachment} target="_blank">{card.subheading}</a>
                                     </h4>                           
                                 </div>
+                                <div className="card-body">
                                 <form method="post" encType="multipart/form-data">
                                     <input type="file" name="file" onChange={this.onChangeHandler} />
-                                    <input type='button' value='Upload' data-id={card.id} onClick={this.onClickHandler}  />
-                                </form>   
+                                    <input type='button' className="btn btn-primary" value='Upload' data-id={card.id} onClick={this.onClickHandler}  />
+                                </form> 
+                                </div>  
                             </div>
                         </div>
                     )
