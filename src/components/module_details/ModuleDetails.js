@@ -21,22 +21,15 @@ class Modules extends Component {
             {
                 heading: "Link 1",
                 id: 1,
-                subheading: "Test Link 1",
+                subheading: "Click below link to download",
                 titleClass: "card-header-success",
                 attachment: attachment
             },
             {
                 heading: "Link 2",
                 id: 2,
-                subheading: "Test Link 2",
+                subheading: "Select the file to upload",
                 titleClass: "card-header-danger",
-                attachment: attachment
-            },
-            {
-                heading: "Link 3",
-                id: 3,
-                subheading: "Test Link 3",
-                titleClass: "card-header-success",
                 attachment: attachment
             }
         ];
