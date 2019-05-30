@@ -28,7 +28,7 @@ class App extends Component {
               <Switch>
                 <Route exact path='/login' component={Login}/>
                 <Route exact path='/modules' component={Modules}/>
-                <Route exact path='/submodules' component={SubModules}/>
+                <Route exact path='/submodules/:id' component={SubModules}/>
                 <Route exact path='/module_deatils' component={ModuleDetails}/>
                 <Route exact path='/' component={Dashboard}/>
               </Switch>

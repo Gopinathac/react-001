@@ -8,26 +8,50 @@ class Modules extends Component {
     
     constructor(props) {
         super(props);
+        console.log('SM::props', props.match.params);
         this.state = {cards: [
             {
-                heading: "Hire",
+                heading: "SubModule 1",
                 id: 1,
-                subheading: "Hire",
+                subheading: "SubModule 1",
                 titleClass: "card-header-success",
             },
             {
-                heading: "Termination",
+                heading: "SubModule 2",
                 id: 2,
-                subheading: "Termination",
+                subheading: "SubModule 2",
                 titleClass: "card-header-danger",
             },
             {
-                heading: "Leaves",
+                heading: "SubModule 3",
                 id: 3,
-                subheading: "Leaves",
+                subheading: "SubModule 3",
                 titleClass: "card-header-success",
             }
         ]};
+
+        if ( props.match && props.match.params && props.match.params.id == '1') {
+            this.state = {cards: [
+                {
+                    heading: "Hire",
+                    id: 1,
+                    subheading: "Hire",
+                    titleClass: "card-header-success",
+                },
+                {
+                    heading: "Termination",
+                    id: 2,
+                    subheading: "Termination",
+                    titleClass: "card-header-danger",
+                },
+                {
+                    heading: "Leaves",
+                    id: 3,
+                    subheading: "Leaves",
+                    titleClass: "card-header-success",
+                }
+            ]};
+        }
     }
     componentDidMount() {
        
