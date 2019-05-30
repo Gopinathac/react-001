@@ -10,21 +10,21 @@ class Modules extends Component {
         super(props);
         this.state = {cards: [
             {
-                heading: "Sub Module 1",
+                heading: "Hire",
                 id: 1,
-                subheading: "Test Sub Module 1",
+                subheading: "Hire",
                 titleClass: "card-header-success",
             },
             {
-                heading: "Sub Module 2",
+                heading: "Termination",
                 id: 2,
-                subheading: "Test Sub Module 2",
+                subheading: "Termination",
                 titleClass: "card-header-danger",
             },
             {
-                heading: "Sub Module 3",
+                heading: "Leaves",
                 id: 3,
-                subheading: "Test Sub Module 3",
+                subheading: "Leaves",
                 titleClass: "card-header-success",
             }
         ]};
@@ -41,8 +41,8 @@ class Modules extends Component {
         // if(!token){
         //     return <Redirect to='/login' />
         // }
-
         document.body.classList.add("dashboard");
+        document.body.classList.add("sub-modules");
         
         return (
             <Card cards={this.state.cards}/>

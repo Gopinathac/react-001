@@ -19,17 +19,10 @@ class Modules extends Component {
 
         var cards = [
             {
-                heading: "Link 1",
+                heading: "Click below link to download",
                 id: 1,
-                subheading: "Click below link to download",
+                subheading: "Download",
                 titleClass: "card-header-success",
-                attachment: attachment
-            },
-            {
-                heading: "Link 2",
-                id: 2,
-                subheading: "Select the file to upload",
-                titleClass: "card-header-danger",
                 attachment: attachment
             }
         ];
@@ -57,9 +50,9 @@ class Modules extends Component {
         // if(!token){
         //     return <Redirect to='/login' />
         // }
-
         document.body.classList.add("dashboard");
-        
+        document.body.classList.add("module-details");
+        // $('[data-toggle="tooltip"]').tooltip();
         return (
             <Card cards={this.state.cards}/>
         )

@@ -47,3 +47,66 @@ footer {
 	padding: 20px;
 	list-style: none;
 }
+
+body.module-details:before,
+body.sub-modules:before,
+body.dashboard:before,
+body.modules:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+}
+body.dashboard:before {background: rgba(4, 32, 41, 0.67);}
+/* body.module-details:before{ background: #0427065c;}
+body.sub-modules:before{ background: #0427065c;}
+body.dashboard:before{ background: #0427065c;}
+body.modules:before{ background: #0427065c;} */
+
+body.dashboard,
+body.modules,
+body.module-details,
+body.sub-modules {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+body.dashboard {
+    background-image: url(../images/manual-automated-testing.png);
+}
+
+body.dashboard.modules {
+    background-image: url(../images/automation-2.jpg);
+}
+
+body.dashboard.sub-modules {
+    background-image: url(../images/automation-3.jpg);
+}
+
+body.dashboard.module-details {
+    background-image: url(../images/automation-4.jpg);
+}
+
+.header {
+    z-index: 1000;
+    position: relative;
+}
+
+body.dashboard h4#tit-hand,
+body.dashboard h4#tit-hand a {
+	color: #fff;
+}
+body.dashboard h4#tit-hand:hover,
+body.dashboard h4#tit-hand:hover a{
+	text-decoration: none;
+}
+.exe-btn {
+	text-align: center;
+}
+.exe-btn input {
+    max-width: 320px;
+    width: 100%;
+}

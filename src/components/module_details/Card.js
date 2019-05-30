@@ -63,6 +63,7 @@ export class Card extends Component {
                 });
                 
                 alert('File uploaded successfully!.');
+                document.querySelector('form').reset();
             }
         }).catch((err) => {
             console.log(err);
@@ -93,39 +94,54 @@ export class Card extends Component {
 
     render() {
         return (
-            <div className='apps row justify-content-md-center h-100'>
+            <div >
                 
-
                 { this.state.cards && this.state.cards.map(card => {
                     return (
-                        <div className="col-md-4" key={card.id} >
-                            <div className="card card-chart">
-                                <div className={card.titleClass} >
-                                    <h4 className="card-title" id="tit-hand">
-                                        <a href={card.attachment} target="_blank">{card.heading}</a>
-                                    </h4>
-                                    <p className="card-category"></p>
+                        <div className='apps row justify-content-md-center h-100' key={card.id}>
+                            <div className="col-md-6"  >
+                                <div className="card card-chart">
+                                    <div className="card-header-success" >
+                                        <h4 className="card-title" id="tit-hand">
+                                            <a href="{card.attachment}" target="_blank">Click below link to download</a>
+                                        </h4>
+                                        <p className="card-category"></p>
+                                    </div>
+                                    <div className="card-body">
+                                        <h4 className="card-title">
+                                            <a href={card.attachment} target="_blank">Download</a>
+                                        </h4>                           
+                                    </div> 
                                 </div>
-                                <div className="card-body">
-                                    <h4 className="card-title">
-                                        <a href={card.attachment} target="_blank">{card.subheading}</a>
-                                    </h4>                           
+                            </div>
+
+                            <div className="col-md-6" >
+                                <div className="card card-chart">
+                                    <div className="card-header-warning" >
+                                        <h4 className="card-title" id="tit-hand">
+                                            <a href="" target="_blank">Select the file to upload</a>
+                                        </h4>
+                                        <p className="card-category"></p>
+                                    </div>
+                                    <div className="card-body">
+                                        <form method="post" encType="multipart/form-data">
+                                            <input type="file" name="file" onChange={this.onChangeHandler} />
+                                            <input type='button' className="btn btn-primary" value='Upload' data-id={card.id} onClick={this.onClickHandler}  />
+                                        </form> 
+                                    </div>  
                                 </div>
-                                <div className="card-body">
-                                <form method="post" encType="multipart/form-data">
-                                    <input type="file" name="file" onChange={this.onChangeHandler} />
-                                    <input type='button' className="btn btn-primary" value='Upload' data-id={card.id} onClick={this.onClickHandler}  />
-                                </form> 
-                                </div>  
+                            </div>
+
+                            <div className='apps exe-btn col-md-6'>
+                                <input type='button' className="btn btn-primary btn-lg" value='Run' data-toggle="tooltip" data-placement="bottom" title="click here to execute the automation file" onClick={this.runExe} />
                             </div>
                         </div>
                     )
                 })
                 }
                 
-                <div className='apps row'>
-                    <input type='button' className="btn btn-primary" value='EXEC' onClick={this.runExe} />
-                </div>
+                
+                
                 
             </div>
         )
